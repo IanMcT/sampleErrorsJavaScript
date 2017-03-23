@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><style type="text/css">.lw { font-size: 60px; }</style>
+
+
+<title>Sample Program with errors</title>
+</head>
+<body>
+  <p>When users click the drop down and select an age range they should be able to click the button and get a statement about what age they are.  There are a few errors in the code.  Which ones are <b>syntax, logic or run-time</b>. (Note, not all three types of errors may be present).  </p>
+  <p>How would you fix the errors?</p>
+<select id="frmDropDownAge">
+  <option value="0">0-20</option>
+  <option value="20">20-40</option>
+  <option value="40">40-60</option>
+  <option value="60">60+</option>
+</select>
+  <button onclick="btnClick();">Select your age range</button>
+  <p id="output">&nbsp;</p>
+
+<script>// Write JavaScript here 
+function btnClick()
+{
+  var userinput = parseInt(document.getElementById("frmDropDownAge").value);
+  var output = document.getElementById("output");
+  
+  if(userinput > 20)
+  {
+    output.innerHTML = "You are an adult";
+  }else if (userinput > 0)
+  {
+    output.innerHTML = "You are a youth";
+  }else if (userinput > 40)
+  {
+    output.innerHTML = "You are middle aged";
+  }else
+  {
+    output.innerHTML = "You are a senior"
+  }
+}</script></body>
